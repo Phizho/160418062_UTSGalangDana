@@ -12,6 +12,9 @@
         <action
             android:id="@+id/actionDetailFragment"
             app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/actionAddFragment"
+            app:destination="@id/addFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
@@ -20,10 +23,30 @@
         <action
             android:id="@+id/action_detailFragment_to_itemHome"
             app:destination="@id/itemHome" />
+        <argument
+            android:name="galPos"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/itemProfile"
-        android:name="com.ubaya.a160418062_utsgalangdana.ProfileFragment"
-        android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        android:name="com.ubaya.a160418062_utsgalangdana.View.ProfileFragment"
+        android:label="ProfileFragment" >
+        <action
+            android:id="@+id/action_itemProfile_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addFragment"
+        android:name="com.ubaya.a160418062_utsgalangdana.View.addFragment"
+        android:label="Tambah Galang Dana"
+        tools:layout="@layout/fragment_add" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.ubaya.a160418062_utsgalangdana.View.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_itemHome"
+            app:destination="@id/itemHome" />
+    </fragment>
 </navigation>

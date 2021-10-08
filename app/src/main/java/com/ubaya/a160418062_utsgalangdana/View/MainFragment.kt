@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ubaya.a160418062_utsgalangdana.R
 import com.ubaya.a160418062_utsgalangdana.ViewModel.ListViewModel
@@ -45,10 +46,14 @@ class MainFragment : Fragment() {
             viewModel.refresh()
             refreshLayout.isRefreshing = false
         }
+
+        fabAdd.setOnClickListener{
+            val action = MainFragmentDirections.actionAddFragment()
+            Navigation.findNavController(it).navigate(action)
+        }
     }
 
     fun observeViewModel() {
-        Log.d("terpanggil","sampe?")
         viewModel.galangLD.observe(viewLifecycleOwner, Observer {
             galangAdapter.updateGalangList(it)
         })

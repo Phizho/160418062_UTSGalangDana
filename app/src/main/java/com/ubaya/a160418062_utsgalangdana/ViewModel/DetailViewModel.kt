@@ -1,15 +1,15 @@
 package com.ubaya.a160418062_utsgalangdana.ViewModel
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.ubaya.a160418062_utsgalangdana.Model.GalangDana
 
-class ListViewModel: ViewModel() {
-    val galangLD = MutableLiveData<List<GalangDana>>()
-    val galangLoadErrorLD = MutableLiveData<Boolean>()
-    val loadingLD = MutableLiveData<Boolean>()
+class DetailViewModel: ViewModel() {
+    val galangLD = MutableLiveData<GalangDana>()
+    val lvm = ListViewModel()
 
-    fun refresh() {
+    fun fetch(galPos : Int) {
         val galang1 =
             GalangDana("1","Sumbangan ke anak yatim piatu","Diperlukan uang sebesar xxx untuk menyumbang ke sebuah panti asuhan di xxx","Nonie","https://assets-a1.kompasiana.com/statics/crawl/557f914e24a9d56c188b4567.jpeg")
 
@@ -20,10 +20,6 @@ class ListViewModel: ViewModel() {
             GalangDana("3","Galang dana untuk saya sekolah","Saya memerlukan uang untuk sekolah tolong bantu saya","Dinny","https://awsimages.detik.net.id/community/media/visual/2021/08/30/sekolah-tatap-muka-di-kudus-7_169.jpeg?w=700&q=90")
 
         val galangList = arrayListOf<GalangDana>(galang1, galang2, galang3)
-
-        galangLD.value = galangList
-        galangLoadErrorLD.value = false
-        loadingLD.value = true
+        galangLD.value = galangList[galPos]
     }
-
 }

@@ -7,6 +7,7 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.ubaya.a160418062_utsgalangdana.Model.GalangDana
 import com.ubaya.a160418062_utsgalangdana.R
+import com.ubaya.a160418062_utsgalangdana.Util.loadImage
 import kotlinx.android.synthetic.main.galang_dana_item.view.*
 
 class GalangAdapter (val galangDanas:ArrayList<GalangDana>) :RecyclerView.Adapter<GalangAdapter.GalangViewHolder>() {
@@ -21,9 +22,11 @@ class GalangAdapter (val galangDanas:ArrayList<GalangDana>) :RecyclerView.Adapte
         override fun onBindViewHolder(holder: GalangViewHolder, position: Int) {
             holder.view.txtJudulGalang.text = galangDanas[position].nama
             //holder.view.txtDeskripsi.text = galangDanas[position].keterangan
+            holder.view.imageView.loadImage(galangDanas[position].Url, holder.view.proBar)
+
 
             holder.view.btnDetail.setOnClickListener {
-                val action = MainFragmentDirections.actionDetailFragment()
+                val action = MainFragmentDirections.actionDetailFragment(position)
                 Navigation.findNavController(it).navigate(action)
             }
         }
