@@ -30,20 +30,20 @@ class DetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        if(arguments != null) {
-            galPos = DetailFragmentArgs.fromBundle(requireArguments()).galPos
-        }
-        viewModel = ViewModelProvider(this).get(DetailViewModel::class.java)
-        viewModel.fetch(galPos)
-        observeViewModel()
+//        if(arguments != null) {
+//            galPos = DetailFragmentArgs.fromBundle(requireArguments()).galPos
+//        }
+//        viewModel = ViewModelProvider(this).get(DetailViewModel::class.java)
+//        viewModel.fetch(galPos)
+//        observeViewModel()
     }
 
     fun observeViewModel() {
-        viewModel.galangLD.observe(viewLifecycleOwner, Observer {
-            txtJudul.setText(it.nama)
-            txtDeskripsi.setText(it.keterangan)
-            imageView2.loadImage(it.Url, progressBar2)
-        })
+//        viewModel.galangLD.observe(viewLifecycleOwner, Observer {
+//            txtJudul.setText(it.nama)
+//            txtDeskripsi.setText(it.keterangan)
+//            imageView2.loadImage(it.Url, progressBar2)
+//        })
     }
 
 }

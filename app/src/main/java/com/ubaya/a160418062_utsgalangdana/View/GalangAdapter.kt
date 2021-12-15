@@ -22,7 +22,7 @@ class GalangAdapter (val galangDanas:ArrayList<GalangDana>) :RecyclerView.Adapte
         override fun onBindViewHolder(holder: GalangViewHolder, position: Int) {
             holder.view.txtJudulGalang.text = galangDanas[position].nama
             //holder.view.txtDeskripsi.text = galangDanas[position].keterangan
-            holder.view.imageView.loadImage(galangDanas[position].Url, holder.view.proBar)
+            holder.view.imageView.loadImage(galangDanas[position].url, holder.view.proBar)
 
 
             holder.view.btnDetail.setOnClickListener {

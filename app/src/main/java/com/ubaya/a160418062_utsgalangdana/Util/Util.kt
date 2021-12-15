@@ -1,5 +1,6 @@
 package com.ubaya.a160418062_utsgalangdana.Util
 
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.ProgressBar
