@@ -7,8 +7,8 @@ interface UserDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(vararg user:User)
 
-    @Query("SELECT EXISTS(SELECT * FROM user WHERE name= :name AND password= :password)")
-    suspend fun selectUser(name:String, password:String): Int
+    @Query("SELECT * FROM user WHERE name= :name and password= :password")
+    suspend fun selectUser(name:String, password:String): User
 
     @Delete
     suspend fun deleteUser(user:User)

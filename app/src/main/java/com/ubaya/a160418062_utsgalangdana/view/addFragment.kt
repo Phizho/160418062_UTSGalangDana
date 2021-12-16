@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import com.ubaya.a160418062_utsgalangdana.model.GalangDana
 import com.ubaya.a160418062_utsgalangdana.R
+import com.ubaya.a160418062_utsgalangdana.model.UserLogin.namaUser
 import com.ubaya.a160418062_utsgalangdana.viewModel.AddViewModel
 import kotlinx.android.synthetic.main.fragment_add.*
 
@@ -35,7 +36,7 @@ class addFragment : Fragment() {
 
 
         btnAdd.setOnClickListener {
-            var galang = GalangDana(editNamaGalangDana.text.toString(), editDeskripsiGalang.text.toString(),"1",editUrlGalang.text.toString())
+            var galang = GalangDana(editNamaGalangDana.text.toString(), editDeskripsiGalang.text.toString(),namaUser,editUrlGalang.text.toString())
 
             val list = listOf(galang)
             viewModel.addGalang(list)

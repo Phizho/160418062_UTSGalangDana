@@ -34,6 +34,9 @@
         <action
             android:id="@+id/action_itemProfile_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_itemProfile_to_personalGalangFragment"
+            app:destination="@id/personalGalangFragment" />
     </fragment>
     <fragment
         android:id="@+id/addFragment"
@@ -57,4 +60,9 @@
         android:name="com.ubaya.a160418062_utsgalangdana.view.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" />
+    <fragment
+        android:id="@+id/personalGalangFragment"
+        android:name="com.ubaya.a160418062_utsgalangdana.view.personalGalangFragment"
+        android:label="Galang Personal"
+        tools:layout="@layout/fragment_personal_galang" />
 </navigation>

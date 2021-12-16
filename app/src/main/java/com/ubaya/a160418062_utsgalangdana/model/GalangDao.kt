@@ -13,6 +13,9 @@ interface GalangDao {
     @Query("SELECT * FROM galangDana WHERE uuid= :id")
     suspend fun selectGalang(id:Int): GalangDana
 
+    @Query("SELECT * FROM galangDana WHERE pemilik= :pemilik")
+    suspend fun selectAllPersonalGalang(pemilik:String): List<GalangDana>
+
     @Delete
     suspend fun deleteGalang(galang:GalangDana)
 }

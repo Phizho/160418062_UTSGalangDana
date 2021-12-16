@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.room.Room
 import com.ubaya.a160418062_utsgalangdana.model.GalangDana
 import com.ubaya.a160418062_utsgalangdana.model.GalangDatabase
+import com.ubaya.a160418062_utsgalangdana.model.UserLogin.namaUser
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -30,6 +31,18 @@ class ListViewModel(application: Application): AndroidViewModel(application), Co
                 GalangDatabase::class.java, "newgalangdb").build()
 
             galangLD.value = db.galangDao().selectAllGalang()
+        }
+    }
+
+    fun refreshPersonal() {
+        loadingLD.value = true
+        galangLoadErrorLD.value = false
+        launch {
+            val db = Room.databaseBuilder(
+                getApplication(),
+                GalangDatabase::class.java, "newgalangdb").build()
+
+            galangLD.value = db.galangDao().selectAllPersonalGalang(namaUser)
         }
     }
 

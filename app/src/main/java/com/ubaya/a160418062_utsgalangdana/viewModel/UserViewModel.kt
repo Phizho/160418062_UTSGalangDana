@@ -2,7 +2,9 @@ package com.ubaya.a160418062_utsgalangdana.viewModel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.MutableLiveData
 import androidx.room.Room
+import com.ubaya.a160418062_utsgalangdana.model.GalangDana
 import com.ubaya.a160418062_utsgalangdana.model.User
 import com.ubaya.a160418062_utsgalangdana.model.UserDatabase
 import kotlinx.coroutines.*
@@ -10,6 +12,8 @@ import kotlin.coroutines.CoroutineContext
 
 class UserViewModel(application: Application)
     : AndroidViewModel(application), CoroutineScope {
+    val LoginLD = MutableLiveData<User>()
+
     private val job = Job()
     override val coroutineContext: CoroutineContext
         get() = job + Dispatchers.Main
@@ -23,15 +27,13 @@ class UserViewModel(application: Application)
         }
     }
 
-    fun checkUser(user:User):Boolean {
-        var usr = 1;
+    fun checkUser(user:User){
         launch {
             val db = Room.databaseBuilder(
                 getApplication(), UserDatabase::class.java,
                 "newuserdb"
             ).build()
-            usr = db.userDao().selectUser(user.name.toString(), user.password.toString())
+            LoginLD.value  = db.userDao().selectUser(user.name.toString(),user.password.toString())
         }
-        return usr != 0
     }
 }

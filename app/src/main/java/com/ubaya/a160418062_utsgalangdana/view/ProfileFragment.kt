@@ -5,12 +5,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import com.ubaya.a160418062_utsgalangdana.R
+import com.ubaya.a160418062_utsgalangdana.model.UserLogin.namaUser
+import com.ubaya.a160418062_utsgalangdana.viewModel.UserViewModel
 import kotlinx.android.synthetic.main.fragment_login.*
 import kotlinx.android.synthetic.main.fragment_profile.*
 
 class ProfileFragment : Fragment() {
+    private lateinit var viewModel: UserViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,10 +29,29 @@ class ProfileFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        btnLogin.visibility = View.GONE
-        btnLogin.setOnClickListener{
-            val action = ProfileFragmentDirections.actionItemProfileToLoginFragment()
-            Navigation.findNavController(it).navigate(action)
+        //viewModel = ViewModelProvider(this).get(UserViewModel::class.java)
+
+        if (namaUser != "") {
+            btnLogin.visibility = View.GONE
+            //imgProfile.visibility = View.VISIBLE
+            btnListGalang.visibility = View.VISIBLE
+            txtName.visibility = View.VISIBLE
+            txtName.text = namaUser
+
+            btnListGalang.setOnClickListener{
+                val action = ProfileFragmentDirections.actionItemProfileToPersonalGalangFragment()
+                Navigation.findNavController(it).navigate(action)
+            }
+        } else {
+            btnLogin.visibility = View.VISIBLE
+            btnListGalang.visibility = View.GONE
+            //imgProfile.visibility = View.GONE
+            txtName.visibility = View.GONE
+
+            btnLogin.setOnClickListener{
+                val action = ProfileFragmentDirections.actionItemProfileToLoginFragment()
+                Navigation.findNavController(it).navigate(action)
+            }
         }
     }
 

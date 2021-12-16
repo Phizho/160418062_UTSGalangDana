@@ -1,6 +1,7 @@
 package com.ubaya.a160418062_utsgalangdana.view
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,10 +11,14 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import com.ubaya.a160418062_utsgalangdana.model.User
 import com.ubaya.a160418062_utsgalangdana.R
+import com.ubaya.a160418062_utsgalangdana.model.UserLogin.namaUser
 import com.ubaya.a160418062_utsgalangdana.viewModel.UserViewModel
 import kotlinx.android.synthetic.main.fragment_login.*
 
 class LoginFragment : Fragment() {
+    val prefs_name = "UserLogin"
+    val nama = "key.nama"
+
     private lateinit var viewModel: UserViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,7 +42,9 @@ class LoginFragment : Fragment() {
 
         btnLog.setOnClickListener{
             val usr = User(editNama.text.toString(), editPassword.text.toString())
-            if (viewModel.checkUser(usr)) {
+            viewModel.checkUser(usr)
+            if (viewModel.LoginLD.value != null) {
+                namaUser = usr.name.toString()
                 val action = LoginFragmentDirections.actionLoginFragmentToItemHome()
                 Navigation.findNavController(it).navigate(action)
             } else {
