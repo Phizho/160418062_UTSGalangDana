@@ -1,4 +1,4 @@
-package com.ubaya.a160418062_utsgalangdana.Model
+package com.ubaya.a160418062_utsgalangdana.model
 
 import android.content.Context
 import androidx.room.Database

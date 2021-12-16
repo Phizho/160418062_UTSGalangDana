@@ -1,9 +1,8 @@
-package com.ubaya.a160418062_utsgalangdana.View
+package com.ubaya.a160418062_utsgalangdana.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController

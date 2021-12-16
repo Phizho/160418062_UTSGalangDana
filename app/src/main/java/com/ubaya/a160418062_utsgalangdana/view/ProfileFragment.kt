@@ -1,4 +1,4 @@
-package com.ubaya.a160418062_utsgalangdana.View
+package com.ubaya.a160418062_utsgalangdana.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import com.ubaya.a160418062_utsgalangdana.R
-import kotlinx.android.synthetic.main.fragment_main.*
+import kotlinx.android.synthetic.main.fragment_login.*
 import kotlinx.android.synthetic.main.fragment_profile.*
 
 class ProfileFragment : Fragment() {
@@ -25,6 +25,7 @@ class ProfileFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        btnLogin.visibility = View.GONE
         btnLogin.setOnClickListener{
             val action = ProfileFragmentDirections.actionItemProfileToLoginFragment()
             Navigation.findNavController(it).navigate(action)

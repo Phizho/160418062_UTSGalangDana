@@ -1,17 +1,16 @@
-package com.ubaya.a160418062_utsgalangdana.View
+package com.ubaya.a160418062_utsgalangdana.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.RadioButton
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
-import com.ubaya.a160418062_utsgalangdana.Model.GalangDana
+import com.ubaya.a160418062_utsgalangdana.model.GalangDana
 import com.ubaya.a160418062_utsgalangdana.R
-import com.ubaya.a160418062_utsgalangdana.ViewModel.AddViewModel
+import com.ubaya.a160418062_utsgalangdana.viewModel.AddViewModel
 import kotlinx.android.synthetic.main.fragment_add.*
 
 class addFragment : Fragment() {

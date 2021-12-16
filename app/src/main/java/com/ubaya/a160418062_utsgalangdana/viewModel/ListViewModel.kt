@@ -1,12 +1,11 @@
-package com.ubaya.a160418062_utsgalangdana.ViewModel
+package com.ubaya.a160418062_utsgalangdana.viewModel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import androidx.room.Room
-import com.ubaya.a160418062_utsgalangdana.Model.GalangDana
-import com.ubaya.a160418062_utsgalangdana.Model.GalangDatabase
+import com.ubaya.a160418062_utsgalangdana.model.GalangDana
+import com.ubaya.a160418062_utsgalangdana.model.GalangDatabase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

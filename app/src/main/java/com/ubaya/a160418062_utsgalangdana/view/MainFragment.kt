@@ -1,7 +1,6 @@
-package com.ubaya.a160418062_utsgalangdana.View
+package com.ubaya.a160418062_utsgalangdana.view
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,7 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ubaya.a160418062_utsgalangdana.R
-import com.ubaya.a160418062_utsgalangdana.ViewModel.ListViewModel
+import com.ubaya.a160418062_utsgalangdana.viewModel.ListViewModel
 import kotlinx.android.synthetic.main.fragment_main.*
 
 class MainFragment : Fragment() {
