@@ -26,6 +26,9 @@
         <argument
             android:name="galUUID"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_detailFragment_to_editFragment"
+            app:destination="@id/editFragment" />
     </fragment>
     <fragment
         android:id="@+id/itemProfile"
@@ -65,4 +68,13 @@
         android:name="com.ubaya.a160418062_utsgalangdana.view.personalGalangFragment"
         android:label="Galang Personal"
         tools:layout="@layout/fragment_personal_galang" />
+    <fragment
+        android:id="@+id/editFragment"
+        android:name="com.ubaya.a160418062_utsgalangdana.view.EditFragment"
+        android:label="fragment_edit"
+        tools:layout="@layout/fragment_edit" >
+        <argument
+            android:name="editUUID"
+            app:argType="integer" />
+    </fragment>
 </navigation>

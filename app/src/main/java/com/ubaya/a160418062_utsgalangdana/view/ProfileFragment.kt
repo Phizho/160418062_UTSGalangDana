@@ -35,6 +35,7 @@ class ProfileFragment : Fragment() {
             btnLogin.visibility = View.GONE
             //imgProfile.visibility = View.VISIBLE
             btnListGalang.visibility = View.VISIBLE
+            btnLogOut.visibility = View.VISIBLE
             txtName.visibility = View.VISIBLE
             txtName.text = namaUser
 
@@ -42,9 +43,15 @@ class ProfileFragment : Fragment() {
                 val action = ProfileFragmentDirections.actionItemProfileToPersonalGalangFragment()
                 Navigation.findNavController(it).navigate(action)
             }
+
+            btnLogOut.setOnClickListener{
+                //belom refresh setiap di klik
+                namaUser = ""
+            }
         } else {
             btnLogin.visibility = View.VISIBLE
             btnListGalang.visibility = View.GONE
+            btnLogOut.visibility = View.GONE
             //imgProfile.visibility = View.GONE
             txtName.visibility = View.GONE
 
